@@ -20,7 +20,7 @@ public class Zadatak42Controller {
 
     @GetMapping()
     public ResponseEntity<String> showMultiplicationPage() throws IOException {
-        String html = staticResourcesService.readHtmlFile("zadatak38.html");
+        String html = staticResourcesService.readHtmlFile("zadatak42.html");
         return ResponseEntity.ok()
                 .contentType(MediaType.TEXT_HTML)
                 .body(html);

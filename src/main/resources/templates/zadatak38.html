@@ -30,12 +30,6 @@
             <li class="nav-item">
                 <a class="nav-link" href="/zadatak/42">Zadatak 42</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Zadatak 44</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Zadatak 45</a>
-            </li>
             <li class="nav-item ">
                 <a href="#" class="nav-link" data-toggle="modal" data-target="#exampleModal">W to dBW converter</a>
             </li>
@@ -139,14 +133,14 @@
                 <div class="form-group row">
                     <label for="Pod" class="col-sm-2 col-form-label font-weight-bold">Pod</label>
                     <div class="col-sm-7">
-                        <input type="number" class="form-control" step="0.01" id="Pod" name="Pod" placeholder="dbW">
+                        <input type="number" class="form-control" step="0.01" id="Pod" name="Pod" placeholder="dbW" required>
                     </div>
                 </div>
 
                 <div class="form-group row">
                     <label for="b" class="col-sm-2 col-form-label font-weight-bold">B</label>
                     <div class="col-sm-7">
-                        <input type="number" class="form-control" step="0.01" id="b" name="b" placeholder="Mb/s">
+                        <input type="number" class="form-control" step="0.01" id="b" name="b" placeholder="Mb/s" required>
                     </div>
                 </div>
 
@@ -154,7 +148,7 @@
                     <label for="delta-lambda" class="col-sm-2 col-form-label font-weight-bold">delta lambda</label>
                     <div class="col-sm-7">
                         <input type="number" class="form-control" step="0.01" id="delta-lambda" name="delta-lambda"
-                               placeholder="nano metri">
+                               placeholder="nm">
                     </div>
                 </div>
 
@@ -162,14 +156,14 @@
                     <label for="lambda" class="col-sm-2 col-form-label font-weight-bold">lambda</label>
                     <div class="col-sm-7">
                         <input type="number" class="form-control" step="0.01" id="lambda" name="lambda"
-                               placeholder="mikro metri">
+                               placeholder="um" required>
                     </div>
                 </div>
 
                 <div class="form-group row">
-                    <label for="alpha" class="col-sm-2 col-form-label font-weight-bold ">ak</label>
+                    <label for="alpha" class="col-sm-2 col-form-label font-weight-bold ">a</label>
                     <div class="col-sm-7">
-                        <input type="number" class="form-control" step="0.01" id="alpha" name="alpha" placeholder="dB">
+                        <input type="number" class="form-control" step="0.01" id="alpha" name="alpha" placeholder="dB" required>
                     </div>
                 </div>
 
@@ -177,7 +171,7 @@
                     <label for="alpha-s" class="col-sm-2 col-form-label font-weight-bold">as</label>
                     <div class="col-sm-7">
                         <input type="number" class="form-control" step="0.01" id="alpha-s" name="alpha-s"
-                               placeholder="dB">
+                               placeholder="dB" required>
                     </div>
                 </div>
 
@@ -186,14 +180,14 @@
                     <label for="alpha-k" class="col-sm-2 col-form-label font-weight-bold">ak</label>
                     <div class="col-sm-7">
                         <input type="number" class="form-control" step="0.01" id="alpha-k" name="alpha-k"
-                               placeholder="dB">
+                               placeholder="dB" required>
                     </div>
                 </div>
 
                 <div class="form-group row">
                     <label for="nb" class="col-sm-2 col-form-label font-weight-bold">nb</label>
                     <div class="col-sm-7">
-                        <input type="number" class="form-control" step="0.01" id="nb" name="nb">
+                        <input type="number" class="form-control" step="0.01" id="nb" name="nb" required>
                     </div>
                 </div>
 
@@ -201,7 +195,7 @@
                 <div class="form-group row">
                     <label for="l1" class="col-sm-2 col-form-label font-weight-bold">L1</label>
                     <div class="col-sm-7">
-                        <input type="number" class="form-control" step="0.01" id="l1" name="l1" placeholder="km">
+                        <input type="number" class="form-control" step="0.01" id="l1" name="l1" placeholder="km" required>
                     </div>
                 </div>
 
@@ -210,18 +204,18 @@
                     <label for="d" class="col-sm-2 col-form-label font-weight-bold">D</label>
                     <div class="col-sm-7">
                         <input type="number" class="form-control" step="0.01" id="d" name="d"
-                               placeholder="ps / km * nm">
+                               placeholder="ps / km * nm" required>
                     </div>
                 </div>
 
                 <div class="form-group row">
                     <label for="ms" class="col-sm-2 col-form-label font-weight-bold">Ms</label>
                     <div class="col-sm-7">
-                        <input type="number" class="form-control" id="ms" step="0.01" name="ms" value="6">
+                        <input type="number" class="form-control" id="ms" step="0.01" name="ms" value="6" required>
                     </div>
                 </div>
                 <div class="mt-5">
-                    <input type="submit" value="Izracunaj" class="btn btn-primary" id="izracunaj-38">
+                    <input type="submit" value="Izracunaj" class="btn btn-primary" id="izracunaj-38" >
                 </div>
             </form>
         </div>
