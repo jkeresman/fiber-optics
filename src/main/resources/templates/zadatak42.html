@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Zadatak 42</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <!-- Popper JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <!-- Bootstrap JS -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="app.js"></script>
+</head>
+
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="/zadatak42">Zadatak 42</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/zadatak38">Zadatak 38</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Zadatak 44</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Zadatak 45</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<div class="container mt-5">
+  <h2 class="text-uppercase mb-5">Proracun snage i vremena porasta za svjetlovodni link</h2>
+  <h3 class="mb-4" >Zadatak 42</h3>
+  <p class="mt-2">Opticki link iz prethodnog zadatka (duzine 468 km, isti odasiljac, svjetlovod i prijamnik),
+    izveden je od jednomodnog svjetlovodnog kabela u komadima po 3 km s gubicima na
+    svakom fiksnim spojevima od 0,1 dB. Svakih 80 km postavljeno je opticko pojacalo u
+    svjetlovod i spojeno na njega s konektorima (gubitak na svakom konektoru 0,5 dB). Svako
+    pojacalo pojaca signal za 20 dB. Gubici na konektorima izmedu odasiljaca odnosno
+    prijamnika i svjetlovodne niti takoder su 0,5 dB. Ako je margina sustava 6 dB, izracunati
+    snagu koju mora davati odasiljac da bi ovaj sustav radio</p>
+
+  <h4>Formula</h4>
+  <img src="../img/formula.png" alt="formula" class="img-fluid mb-5 mt-3">
+</div>
+<div class="container">
+
+  <form id="zadatak-42">
+
+    <div class="form-group row">
+      <label for="ls" class="col-sm-2 col-form-label">Ls (km)</label>
+      <div class="col-sm-10">
+        <input type="number" class="form-control" id="ls" name ="ls" value="468">
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label for="alpha-s" class="col-sm-2 col-form-label">as (dB) :</label>
+      <div class="col-sm-10">
+        <input type="number" class="form-control" id="alpha-s" name ="alpha-s" value="3">
+      </div>
+    </div>
+
+
+    <div class="form-group row">
+      <label for="alpha-k" class="col-sm-2 col-form-label">ak (dB) :</label>
+      <div class="col-sm-10">
+        <input type="number" class="form-control" id="alpha-k" name ="alpha-k" value="0.5">
+      </div>
+    </div>
+
+
+    <div class="form-group row">
+      <label for="la" class="col-sm-2 col-form-label">La (km):</label>
+      <div class="col-sm-10">
+        <input type="number" class="form-control" id="la" name ="la" value="80">
+      </div>
+    </div>
+
+
+    <div class="form-group row">
+      <label for="ga" class="col-sm-2 col-form-label">Ga (dB):</label>
+      <div class="col-sm-10">
+        <input type="number" class="form-control" id="ga" name ="ga" value="20">
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label for="ms" class="col-sm-2 col-form-label">Ms (6dB do 8dB):</label>
+      <div class="col-sm-10">
+        <input type="number" class="form-control" id="ms" name ="ms" value="6">
+      </div>
+    </div>
+
+    <input type="submit" value="Izracunaj" class="btn btn-primary">
+  </form>
+  <br><br>
+  <label for="ptx" class="form-label">Ptx (mW):</label>
+  <input type="text" id="ptx" name="ptx" class="form-control" readonly>
+  <br><br>
+
+</div>
+</html>
