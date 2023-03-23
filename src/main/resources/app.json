@@ -1,0 +1,13 @@
+{
+  "name": "fiber-optics",
+  "description": "Random project",
+  "repository": "https://github.com/jkeresman/fiber-optics.git",
+  "env": {
+    "SPRING_PROFILES_ACTIVE": "production"
+  },
+  "buildpacks": [
+    {
+      "url": "heroku/java"
+    }
+  ]
+}
