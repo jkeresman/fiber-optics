@@ -1,6 +1,5 @@
 package com.jk.optics.fiberoptics.zadatak38;
 
-import com.jk.optics.fiberoptics.constants.Constants;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
@@ -11,14 +10,14 @@ import static com.jk.optics.fiberoptics.constants.Constants.SPEED_OF_LIGHT;
 @Service
 public class Zadatak38Service {
 
-    public Zadatak38Response solve(Zadatak38Request zadatak38Request) {
+    public Zadatak38Response solve(zadatak38 zadatak38) {
         BigDecimal snagaPrijemnika = izracunajSnaguPrijemnikauDbW(
-                zadatak38Request.getBrojFotonaPoBitu(),
-                zadatak38Request.getLambda(),
-                zadatak38Request.getBrzinaPrijenosa()
+                zadatak38.getBrojFotonaPoBitu(),
+                zadatak38.getLambda(),
+                zadatak38.getBrzinaPrijenosa()
         );
         System.out.println("Snaga prijemnika: " + snagaPrijemnika);
-        BigDecimal rjesenjeA = BigDecimal.valueOf((zadatak38Request.getSnagaOdasiljacadbW() - snagaPrijemnika.doubleValue() / zadatak38Request.getGubici()));
+        BigDecimal rjesenjeA = BigDecimal.valueOf((zadatak38.getSnagaOdasiljacadbW() - snagaPrijemnika.doubleValue() / zadatak38.getGubici()));
         BigDecimal rjesenjeB = new BigDecimal("10");
         BigDecimal rjesenjeC = new BigDecimal("20");
         return new Zadatak38Response(rjesenjeA, rjesenjeB, rjesenjeC, snagaPrijemnika);

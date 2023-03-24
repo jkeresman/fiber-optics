@@ -18,11 +18,9 @@ public class Zadatak38Controller {
     private final StaticResourcesService staticResourcesService;
 
     @PostMapping(path = "/calculate")
-    public ResponseEntity<Zadatak38Response> getResults38(@RequestBody Zadatak38Request zadatak38Request) {
-        System.out.println(zadatak38Request);
-        Zadatak38Response zadatak38Response = zadatak38Service.solve(zadatak38Request);
-        System.out.println("Sending response:" + zadatak38Response.toString());
-        return new ResponseEntity<>(zadatak38Response, HttpStatus.OK);
+    public ResponseEntity<Zadatak38Response> izracunajZadatak38(@RequestBody zadatak38 zadatak38) {
+        Zadatak38Response response = zadatak38Service.solve(zadatak38);
+        return new ResponseEntity<>(response, HttpStatus.OK);
     }
 
     @GetMapping()

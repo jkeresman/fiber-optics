@@ -15,7 +15,7 @@ $(document).ready(function () {
             contentType: "application/json",
             dataType: "json",
             success: function (response) {
-                $("#ptx").val(response);
+                $("#ptx").val(response.toFixed(4) + " mW");
             },
             error: function(xhr, status, error) {
                 console.error(error);

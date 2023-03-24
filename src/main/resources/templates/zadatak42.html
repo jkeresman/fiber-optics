@@ -12,7 +12,8 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <!-- Bootstrap JS -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-  <script src="app.js"></script>
+  <SCRIPT SRC="/js/zadatak42.js"></SCRIPT>
+  <SCRIPT SRC="/js/converter.js"></SCRIPT>
 </head>
 
 
@@ -28,10 +29,66 @@
       <li class="nav-item active">
         <a class="nav-link" href="/zadatak/42">Zadatak 42</a>
       </li>
-
+      <li class="nav-item ">
+        <a href="#" class="nav-link" data-toggle="modal" data-target="#exampleModal">W to dBW converter</a>
+      </li>
     </ul>
   </div>
 </nav>
+
+
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">W to dbW converter</h5>
+      </div>
+      <div class="modal-body">
+        <div class="container">
+          <div class="row">
+            <form id="converter">
+              <div class="form-group row">
+                <div class="col-sm-2">
+                  <label for="vati" class="col-form-label font-weight-bold">P</label>
+                </div>
+                <div class="col-sm-6">
+                  <input type="number" class="form-control" step="0.01" id="vati" name="vati">
+                </div>
+                <div class="col-sm-4">
+                  <select class="form-select-lg" name="jedinica">
+                    <option value="1000" selected>mW</option>
+                    <option value="1000000">uW</option>
+                    <option value="1000000000">nW</option>
+                    <option value="1000000000000">pW</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="row mb-3">
+                <div class="col-sm-2">
+                  <label for="izracun" class="form-label font-weight-bold">P</label>
+                </div>
+                <div class="col-sm-8">
+                  <input type="text" id="izracun" name="izracun" class="form-control" readonly>
+                </div>
+              </div>
+              <div>
+                <input type="submit" value="Pretvori" class="btn btn-primary" id="convert">
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer ">
+        <button type="button" class="btn btn-dark " data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+
 <div class="container mt-5">
   <h2 class="text-uppercase mb-5">Proracun snage i vremena porasta za svjetlovodni link</h2>
   <h3 class="mb-4" >Zadatak 42</h3>
@@ -44,7 +101,12 @@
     snagu koju mora davati odasiljac da bi ovaj sustav radio</p>
 
   <h4>Formula</h4>
-  <img src="../img/formula.png" alt="formula" class="img-fluid mb-5 mt-3">
+  <div>
+    <img src="/img/formula.png" alt="formula" class="img-fluid mb-1 mt-3">
+  </div>
+  <div>
+    <img src="/img/formula_42_01.png" alt="formula" class="img-fluid mb-5 ml-2">
+  </div>
 </div>
 <div class="container">
 
@@ -53,7 +115,7 @@
     <div class="form-group row">
       <label for="ls" class="col-sm-2 col-form-label">Ls (km)</label>
       <div class="col-sm-10">
-        <input type="number" class="form-control" id="ls" name ="ls" value="468">
+        <input type="number" class="form-control" id="ls" name ="ls" value="3">
       </div>
     </div>
 
@@ -98,7 +160,7 @@
     <input type="submit" value="Izracunaj" class="btn btn-primary">
   </form>
   <br><br>
-  <label for="ptx" class="form-label">Ptx (mW):</label>
+  <label for="ptx" class="form-label">SNAGA ODASILJACA</label>
   <input type="text" id="ptx" name="ptx" class="form-control" readonly>
   <br><br>
 

@@ -94,21 +94,21 @@
         <h2 class="text-uppercase mb-5">Proracun snage i vremena porasta za svjetlovodni link</h2>
         <h3 class="mb-4">Zadatak 38</h3>
         <ul>
-            <li>Odasiljac: LED dioda snage 100 mikroW i kvadratne srednje vrijednosti sirine spektra
-                izvora 20 nm na valnoj duljini 1,3 mikrom
+            <li>Odasiljac: LED dioda snage <b>B</b> i kvadratne srednje vrijednosti sirine spektra
+                izvora <b>delta lambda</b> na valnoj duljini <b>lambda</b>
             </li>
-            <li>Jednomodni svjetlovod u komadima po 10 km s parametrom materijalne disperzije
-                1 ps/(km nm) i gubicima 0,25 dB/km na 1,3 mikrom
-            </li>
-            <li>
-                Konektori s gubicima 0,25 i fiksni spojevi s gubicima 0,4 dB po spoju
+            <li>Jednomodni svjetlovod u komadima po <b>L1</b> s parametrom materijalne disperzije
+                <b>D</b> i gubicima <b>a</b> na <b>lambda</b>
             </li>
             <li>
-                Prijamnik: PIN fotodioda s prosjecnim brojem fotona po bitu 5000
+                Konektori s gubicima <b>ak</b> i fiksni spojevi s gubicima <b>as</b> po spoju
+            </li>
+            <li>
+                Prijamnik: PIN fotodioda s prosjecnim brojem fotona po bitu <b>nb</b>
             </li>
         </ul>
         <p>
-            Margina sustava je 8 dB, a brzina koju zelimo postici 150 Mb/s. Odrediti koliko bi bilo
+            Margina sustava je <b>Ms</b> a brzina koju zelimo postici <b>B</b> Odrediti koliko bi bilo
             ogranicenje duljine prijenosa uslijed
         </p>
         <ol type="A">
@@ -123,31 +123,31 @@
             </li>
         </ol>
         <h4>Formula</h4>
-        <IMG SRC="/img/formula.png" alt="formula" class="img-fluid mb-5 mt-3">
+        <IMG SRC="/img/formula.png" alt="formula" class="img-fluid mb-3 mt-3">
     </div>
 
-    <div class="row justify-content-center">
+    <div class="row justify-content-center mt-3">
         <div class="col-lg-6 col-md-6 ">
             <form id="zadatak-38">
 
                 <div class="form-group row">
                     <label for="Pod" class="col-sm-2 col-form-label font-weight-bold">Pod</label>
                     <div class="col-sm-7">
-                        <input type="number" class="form-control" step="0.01" id="Pod" name="Pod" placeholder="dbW" required>
+                        <input type="number" class="form-control"  step="0.01" id="Pod" name="Pod" placeholder="dbW" required>
                     </div>
                 </div>
 
                 <div class="form-group row">
                     <label for="b" class="col-sm-2 col-form-label font-weight-bold">B</label>
                     <div class="col-sm-7">
-                        <input type="number" class="form-control" step="0.01" id="b" name="b" placeholder="Mb/s" required>
+                        <input type="number" class="form-control " step="0.01" id="b" name="b" placeholder="Mb/s" required>
                     </div>
                 </div>
 
                 <div class="form-group row">
                     <label for="delta-lambda" class="col-sm-2 col-form-label font-weight-bold">delta lambda</label>
                     <div class="col-sm-7">
-                        <input type="number" class="form-control" step="0.01" id="delta-lambda" name="delta-lambda"
+                        <input type="number" class="form-control " step="0.01" id="delta-lambda" name="delta-lambda"
                                placeholder="nm">
                     </div>
                 </div>
@@ -155,22 +155,22 @@
                 <div class="form-group row">
                     <label for="lambda" class="col-sm-2 col-form-label font-weight-bold">lambda</label>
                     <div class="col-sm-7">
-                        <input type="number" class="form-control" step="0.01" id="lambda" name="lambda"
+                        <input type="number" class="form-control " step="0.01" id="lambda" name="lambda"
                                placeholder="um" required>
                     </div>
                 </div>
 
                 <div class="form-group row">
-                    <label for="alpha" class="col-sm-2 col-form-label font-weight-bold ">a</label>
+                    <label for="alpha" class="col-sm-2 col-form-label font-weight-bold">a</label>
                     <div class="col-sm-7">
-                        <input type="number" class="form-control" step="0.01" id="alpha" name="alpha" placeholder="dB" required>
+                        <input type="number" class="form-control " step="0.01" id="alpha" name="alpha" placeholder="dB" required>
                     </div>
                 </div>
 
                 <div class="form-group row">
                     <label for="alpha-s" class="col-sm-2 col-form-label font-weight-bold">as</label>
                     <div class="col-sm-7">
-                        <input type="number" class="form-control" step="0.01" id="alpha-s" name="alpha-s"
+                        <input type="number" class="form-control " step="0.01" id="alpha-s" name="alpha-s"
                                placeholder="dB" required>
                     </div>
                 </div>
@@ -195,7 +195,7 @@
                 <div class="form-group row">
                     <label for="l1" class="col-sm-2 col-form-label font-weight-bold">L1</label>
                     <div class="col-sm-7">
-                        <input type="number" class="form-control" step="0.01" id="l1" name="l1" placeholder="km" required>
+                        <input type="number" class="form-control " step="0.01" id="l1" name="l1" placeholder="km" required>
                     </div>
                 </div>
 
@@ -203,7 +203,7 @@
                 <div class="form-group row">
                     <label for="d" class="col-sm-2 col-form-label font-weight-bold">D</label>
                     <div class="col-sm-7">
-                        <input type="number" class="form-control" step="0.01" id="d" name="d"
+                        <input type="number" class="form-control " step="0.01" id="d" name="d"
                                placeholder="ps / km * nm" required>
                     </div>
                 </div>
@@ -211,7 +211,7 @@
                 <div class="form-group row">
                     <label for="ms" class="col-sm-2 col-form-label font-weight-bold">Ms</label>
                     <div class="col-sm-7">
-                        <input type="number" class="form-control" id="ms" step="0.01" name="ms" value="6" required>
+                        <input type="number" class="form-control " id="ms" step="0.01" name="ms" value="6" required>
                     </div>
                 </div>
                 <div class="mt-5">
@@ -224,31 +224,16 @@
             <label for="rez-od" class="form-label text-uppercase">Snaga prijemnika </label>
             <input type="text" id="rez-od" name="rez-od" class="form-control text-center" readonly>
             <br><br>
-            <label for="rez-a" class="form-label text-uppercase">samo gubici svjetlovoda </label>
+            <label for="rez-a" class="form-label text-uppercase">Ogranicenje duljine prijenosa uslijed samo gubitaka svjetlovoda </label>
             <input type="text" id="rez-a" name="rez-a" class="form-control text-center" readonly>
             <br><br>
-            <label for="rez-b" class="form-label text-uppercase">samo disperzija niti </label>
+            <label for="rez-b" class="form-label text-uppercase">ogranicenje duljine prijenosa uslijed samo disperzije niti </label>
             <input type="text" id="rez-b" name="rez-b" class="form-control text-center" readonly>
             <br><br>
-            <label for="rez-c" class="form-label text-uppercase">svi parametri ovako sastavljenog sustava</label>
+            <label for="rez-c" class="form-label text-uppercase">ogranicenje duljine prijenosa uslijed ovako sastavljenog sustava</label>
             <input type="text" id="rez-c" name="rez-c" class="form-control text-center" readonly>
             <br><br>
         </div>
     </div>
-</div>
-
-<div class="d-flex flex-column h-100 bg-primary align-items-center mt-5">
-
-    <!-- FOOTER -->
-    <footer class="w-100 py-4">
-        <div class="container d-flex justify-content-center">
-            <div class="col-lg-6 col-md-6 text-center">
-                <h3 class="text-white mb-3 text-uppercase">Tehnicko veleuciliste u zagrebu</h3>
-                <p class="text-white mb-1 text-uppercase">Komunikacijska i racunalna tehnika</p>
-                <p class="text-white mb-1 text-uppercase">Opticke komunikacije</p>
-                <p class="small text-white">Zbirka numerickih zadataka Dr.sc. Sonja Zentner Pilinsky, prof.v.s.</p>
-            </div>
-        </div>
-    </footer>
 </div>
 </html>

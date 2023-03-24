@@ -19,7 +19,6 @@ public class ConverterController {
 
     @PostMapping()
     public ResponseEntity<BigDecimal> convertToDBW(@RequestBody ConverterRequest converterRequest) {
-        System.out.println(converterRequest.toString());
         BigDecimal response = converterService.convertToDbW(converterRequest);
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
