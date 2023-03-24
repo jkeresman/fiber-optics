@@ -11,4 +11,7 @@ public class ConverterService {
                 10 * Math.log10(converterRequest.getValue()/converterRequest.getDjelitelj())
         );
     }
+    public BigDecimal convertToDbW(Double vati) {
+        return BigDecimal.valueOf(10 * Math.log10(vati));
+    }
 }
