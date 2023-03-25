@@ -32,8 +32,8 @@ public class Zadatak38ServiceTests {
                 20.0,
                 1.3,
                 0.25,
-                0.25,
                 0.4,
+                0.2,
                 5000.0,
                 10.0,
                 1.0,
@@ -43,7 +43,7 @@ public class Zadatak38ServiceTests {
 
         BigDecimal expectedRjesenjeA = new BigDecimal("117.6000000000000227373675443232059478759765625");
         BigDecimal expectedRjesenjeB = new BigDecimal("83.3333333333333285963817615993320941925048828125");
-        BigDecimal expectedRjesenjeC = new BigDecimal("20");
+        BigDecimal expectedRjesenjeC = new BigDecimal("72.4000000000000198951966012828052043914794921875");
         BigDecimal expectedSnagaPrijemnika = new BigDecimal("-69.4");
 
 
