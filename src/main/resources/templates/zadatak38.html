@@ -94,32 +94,59 @@
         <h2 class="text-uppercase mb-5">Proracun snage i vremena porasta za svjetlovodni link</h2>
         <h3 class="mb-4">Zadatak 38</h3>
         <ul>
-            <li>Odasiljac: LED dioda snage <b>B</b> i kvadratne srednje vrijednosti sirine spektra
-                izvora <b>delta lambda</b> na valnoj duljini <b>lambda</b>
+            <li>
+                <div>
+                    <b>Pod</b> - snaga odasiljaca LED diode [dbW]
+                </div>
+                <div>
+                    <b>dLambda</b> - kvadratna srednja vrijednost sirine spektra izvora LED diode [nm/s]
+                </div>
+                <div>
+                    <b>lambda</b> - valna duljina [um] </b>
+                </div>
             </li>
-            <li>Jednomodni svjetlovod u komadima po <b>L1</b> s parametrom materijalne disperzije
-                <b>D</b> i gubicima <b>a</b> na <b>lambda</b>
+
+            <li>
+                <div>
+                    <b>L1</b> - komadi jednomodnog svjetlovoda [km]
+                </div>
+                <div>
+                    <b>D</b> - parametar materijalne disperzije [ps/ km * nm]
+                </div>
+                <div>
+                    <b>a</b> - gubici [db] na valnoj duljini lambda [um]
+                </div>
+            </li>
+
+            <li>
+                <b>ak</b> - gubici konetkora [db]
             </li>
             <li>
-                Konektori s gubicima <b>ak</b> i fiksni spojevi s gubicima <b>as</b> po spoju
+                <b>as</b> - gubitak svakog fiksnog spoja[db]
             </li>
             <li>
-                Prijamnik: PIN fotodioda s prosjecnim brojem fotona po bitu <b>nb</b>
+                <b>nb</b> - prosjecni broj fotona po bitu prijemnika PIN fotodiode
+            </li>
+            <li>
+                <b>Ms</b> - margina sustava [6 - 8]
+            </li>
+            <li>
+                <b>B</b> - brzina koju zelimo postici [Mb/s]
             </li>
         </ul>
-        <p>
-            Margina sustava je <b>Ms</b> a brzina koju zelimo postici <b>B</b> Odrediti koliko bi bilo
-            ogranicenje duljine prijenosa uslijed
-        </p>
+
+        <h5>
+            Odrediti koliko bi bilo ogranicenje duljine prijenosa uslijed:
+        </h5>
         <ol type="A">
             <li>
-                samo gubitaka svjetlovoda
+                samo gubitaka svjetlovoda ?
             </li>
             <li>
-                samo disperzije niti
+                samo disperzije niti ?
             </li>
             <li>
-                svih parametara ovako sastavljenog sustava
+                svih parametara ovako sastavljenog sustava ?
             </li>
         </ol>
         <h4>Formula</h4>
@@ -145,7 +172,7 @@
                 </div>
 
                 <div class="form-group row">
-                    <label for="delta-lambda" class="col-sm-2 col-form-label font-weight-bold">delta lambda</label>
+                    <label for="delta-lambda" class="col-sm-2 col-form-label font-weight-bold">dlambda</label>
                     <div class="col-sm-7">
                         <input type="number" class="form-control " step="0.01" id="delta-lambda" name="delta-lambda"
                                placeholder="nm" value="20">
