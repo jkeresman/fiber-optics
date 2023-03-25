@@ -25,7 +25,7 @@ public class Zadatak42Controller {
     }
 
     @GetMapping()
-    public ResponseEntity<String> getPage() throws IOException {
+    public ResponseEntity<String> getPageForZadatak42() throws IOException {
         String html = staticResourcesService.readHtmlFile("zadatak42.html");
         return ResponseEntity.ok()
                 .contentType(MediaType.TEXT_HTML)

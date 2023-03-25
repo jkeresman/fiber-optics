@@ -18,13 +18,13 @@ public class Zadatak38Controller {
     private final StaticResourcesService staticResourcesService;
 
     @PostMapping(path = "/calculate")
-    public ResponseEntity<Zadatak38Response> izracunajZadatak38(@RequestBody zadatak38 zadatak38) {
-        Zadatak38Response response = zadatak38Service.solve(zadatak38);
+    public ResponseEntity<Zadatak38Response> izracunajZadatak38(@RequestBody Zadatak38Request Zadatak38Request) {
+        Zadatak38Response response = zadatak38Service.solve(Zadatak38Request);
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
 
     @GetMapping()
-    public ResponseEntity<String> showMultiplicationPage() throws IOException {
+    public ResponseEntity<String> getPageForZadatak38() throws IOException {
             String html = staticResourcesService.readHtmlFile("zadatak38.html");
             return ResponseEntity.ok()
                     .contentType(MediaType.TEXT_HTML)

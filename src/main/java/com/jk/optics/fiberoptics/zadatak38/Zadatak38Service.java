@@ -1,6 +1,5 @@
 package com.jk.optics.fiberoptics.zadatak38;
 
-import com.jk.optics.fiberoptics.converter.ConverterRequest;
 import com.jk.optics.fiberoptics.converter.ConverterService;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -16,19 +15,19 @@ public class Zadatak38Service {
 
     private final ConverterService converterService;
 
-    public Zadatak38Response solve(zadatak38 zadatak38) {
+    public Zadatak38Response solve(Zadatak38Request Zadatak38Request) {
         BigDecimal snagaPrijemnika = izracunajSnaguPrijemnikauDbW(
-                zadatak38.getBrojFotonaPoBitu(),
-                zadatak38.getLambda(),
-                zadatak38.getBrzinaPrijenosa()
+                Zadatak38Request.getBrojFotonaPoBitu(),
+                Zadatak38Request.getLambda(),
+                Zadatak38Request.getBrzinaPrijenosa()
         );
-        System.out.println("Snaga prijemnika: " + snagaPrijemnika);
+
         BigDecimal rjesenjeA = rijesiPodzadatakA(
                 snagaPrijemnika,
-                zadatak38.getSnagaOdasiljacadbW(),
-                zadatak38.getGubici()
+                Zadatak38Request.getSnagaOdasiljacadbW(),
+                Zadatak38Request.getGubici()
         );
-        System.out.println("Podazdatak a: " + rjesenjeA);
+
         BigDecimal rjesenjeB = new BigDecimal("10");
         BigDecimal rjesenjeC = new BigDecimal("20");
         return new Zadatak38Response(rjesenjeA, rjesenjeB, rjesenjeC, snagaPrijemnika);

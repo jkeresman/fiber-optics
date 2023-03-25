@@ -24,7 +24,7 @@ public class ConverterServiceTest {
         Double snagaUWatima = 100E-6;
         BigDecimal expected = new BigDecimal("-40.0");
 
-        //WHEN
+        //GIVEN
         BigDecimal actual = converterService.convertToDbW(snagaUWatima);
 
         //THEN

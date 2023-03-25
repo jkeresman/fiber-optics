@@ -8,7 +8,7 @@ import lombok.*;
 @Data
 @NoArgsConstructor
 @Builder
-public class zadatak38 {
+public class Zadatak38Request {
 
     @JsonProperty("Pod")
     private Double snagaOdasiljacadbW;
