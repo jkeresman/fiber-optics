@@ -26,15 +26,23 @@ public class Zadatak38ServiceTests {
     @Test
     void zadatak38Test() {
         //GIVEN
-        Zadatak38Request zadatak38 = new Zadatak38Request();
-        zadatak38.setBrojFotonaPoBitu(5000.0);
-        zadatak38.setLambda(1.3);
-        zadatak38.setBrzinaPrijenosa(150.0);
-        zadatak38.setSnagaOdasiljacadbW(-40.0);
-        zadatak38.setGubici(0.25);
+        Zadatak38Request zadatak38 = new Zadatak38Request(
+                -40.0,
+                150.0,
+                20.0,
+                1.3,
+                0.25,
+                0.25,
+                0.4,
+                5000.0,
+                10.0,
+                1.0,
+                8.0
+        );
+
 
         BigDecimal expectedRjesenjeA = new BigDecimal("117.6000000000000227373675443232059478759765625");
-        BigDecimal expectedRjesenjeB = new BigDecimal("10");
+        BigDecimal expectedRjesenjeB = new BigDecimal("83.3333333333333285963817615993320941925048828125");
         BigDecimal expectedRjesenjeC = new BigDecimal("20");
         BigDecimal expectedSnagaPrijemnika = new BigDecimal("-69.4");
 

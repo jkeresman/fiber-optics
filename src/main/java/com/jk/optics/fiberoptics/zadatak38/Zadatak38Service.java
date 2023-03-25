@@ -1,11 +1,13 @@
 package com.jk.optics.fiberoptics.zadatak38;
 
+import com.jk.optics.fiberoptics.constants.Constants;
 import com.jk.optics.fiberoptics.converter.ConverterService;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
 
+import static com.jk.optics.fiberoptics.constants.Constants.*;
 import static com.jk.optics.fiberoptics.constants.Constants.PLANCK_CONSTANT;
 import static com.jk.optics.fiberoptics.constants.Constants.SPEED_OF_LIGHT;
 
@@ -13,38 +15,44 @@ import static com.jk.optics.fiberoptics.constants.Constants.SPEED_OF_LIGHT;
 @AllArgsConstructor
 public class Zadatak38Service {
 
-    private static final int MIKRO_METARA = 1_000_000;
-    private static final int MEGA_BITA_PO_SEKUNDI = 1_000_000;
-    private final ConverterService converterService;
+        private final ConverterService converterService;
 
-    public Zadatak38Response solve(Zadatak38Request Zadatak38Request) {
-        BigDecimal snagaPrijemnika = izracunajSnaguPrijemnikauDbW(
-                Zadatak38Request.getBrojFotonaPoBitu(),
-                Zadatak38Request.getLambda(),
-                Zadatak38Request.getBrzinaPrijenosa()
-        );
+        public Zadatak38Response solve(Zadatak38Request zadatak38Request) {
+            BigDecimal snagaPrijemnika = izracunajSnaguPrijemnikauDbW(zadatak38Request);
 
-        BigDecimal rjesenjeA = rijesiPodzadatakA(
-                snagaPrijemnika,
-                Zadatak38Request.getSnagaOdasiljacadbW(),
-                Zadatak38Request.getGubici()
-        );
+            BigDecimal rjesenjeA = rijesiPodzadatakA(zadatak38Request);
 
-        BigDecimal rjesenjeB = new BigDecimal("10");
-        BigDecimal rjesenjeC = new BigDecimal("20");
-        return new Zadatak38Response(rjesenjeA, rjesenjeB, rjesenjeC, snagaPrijemnika);
-    }
+            BigDecimal rjesenjeB = rijesiPodzadatakB(zadatak38Request);
 
-    private BigDecimal izracunajSnaguPrijemnikauDbW(Double brojFotonaPoBitu, Double lambda, Double brzinaKojuZelimoPostici) {
-        Double snagaUW = brojFotonaPoBitu * ((PLANCK_CONSTANT * SPEED_OF_LIGHT)
-                / (lambda/ MIKRO_METARA) * brzinaKojuZelimoPostici * MEGA_BITA_PO_SEKUNDI);
-        return converterService.convertToDbW(snagaUW);
-    }
+            BigDecimal rjesenjeC = new BigDecimal("20");
+            return new Zadatak38Response(rjesenjeA, rjesenjeB, rjesenjeC, snagaPrijemnika);
+        }
 
-    private BigDecimal rijesiPodzadatakA(BigDecimal snagaOdasiljaca, Double snagaPrijemnika, Double gubici) {
-        Double rjesenjeA = Math.abs(snagaOdasiljaca.doubleValue() - snagaPrijemnika) / gubici;
-        return new BigDecimal(rjesenjeA);
-    }
+        private BigDecimal rijesiPodzadatakB(Zadatak38Request zadatak38Request) {
+            Double disperzijaNiti = zadatak38Request.getMaterijalnaDisperzija();
+            Double dLambda = zadatak38Request.getDeltaLambda();
+            Double brzinaPrijenosa = zadatak38Request.getBrzinaPrijenosa();
+            Double rjesenjeB = 1/(4 * Math.abs(disperzijaNiti * PIKO)
+                    * dLambda * brzinaPrijenosa * MEGA_BITA_PO_SEKUNDI);
+            return new BigDecimal(rjesenjeB);
+        }
+
+        private BigDecimal izracunajSnaguPrijemnikauDbW(Zadatak38Request zadatak38Request) {
+            Double brojFotonaPoBitu = zadatak38Request.getBrojFotonaPoBitu();
+            Double lambda = zadatak38Request.getLambda();
+            Double brzinaKojuZelimoPostici = zadatak38Request.getBrzinaPrijenosa();
+            Double snagaUW = brojFotonaPoBitu * ((PLANCK_CONSTANT * SPEED_OF_LIGHT)
+                    / (lambda * MIKRO) * brzinaKojuZelimoPostici * MEGA_BITA_PO_SEKUNDI);
+            return converterService.convertToDbW(snagaUW);
+        }
+
+        private BigDecimal rijesiPodzadatakA(Zadatak38Request zadatak38Request) {
+            BigDecimal snagaPrijemnika = izracunajSnaguPrijemnikauDbW(zadatak38Request);
+            Double snagaOdasiljaca = zadatak38Request.getSnagaOdasiljacadbW();
+            Double gubici = zadatak38Request.getGubici();
+            Double rjesenjeA = (snagaOdasiljaca - snagaPrijemnika.doubleValue()) / gubici;
+            return new BigDecimal(rjesenjeA);
+        }
 
 
 }
