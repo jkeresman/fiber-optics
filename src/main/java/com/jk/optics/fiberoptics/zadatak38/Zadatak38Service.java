@@ -13,6 +13,8 @@ import static com.jk.optics.fiberoptics.constants.Constants.SPEED_OF_LIGHT;
 @AllArgsConstructor
 public class Zadatak38Service {
 
+    private static final int MIKRO_METARA = 1_000_000;
+    private static final int MEGA_BITA_PO_SEKUNDI = 1_000_000;
     private final ConverterService converterService;
 
     public Zadatak38Response solve(Zadatak38Request Zadatak38Request) {
@@ -34,7 +36,8 @@ public class Zadatak38Service {
     }
 
     private BigDecimal izracunajSnaguPrijemnikauDbW(Double brojFotonaPoBitu, Double lambda, Double brzinaKojuZelimoPostici) {
-        Double snagaUW = brojFotonaPoBitu * ((PLANCK_CONSTANT * SPEED_OF_LIGHT) / (lambda/1_000_000) * brzinaKojuZelimoPostici * 1_000_000);
+        Double snagaUW = brojFotonaPoBitu * ((PLANCK_CONSTANT * SPEED_OF_LIGHT)
+                / (lambda/ MIKRO_METARA) * brzinaKojuZelimoPostici * MEGA_BITA_PO_SEKUNDI);
         return converterService.convertToDbW(snagaUW);
     }
 
