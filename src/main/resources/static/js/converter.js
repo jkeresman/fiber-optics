@@ -15,9 +15,10 @@ $(document).ready(function() {
             data: JSON.stringify(request),
             success: function(response) {
                 $('#izracun').val(response.toFixed(4) + " dbW");
+                $('#dbm').val((response + 30).toFixed(4) + " dbm");
             },
             error: function() {
-                alert('Error occurred while trying to convert' + watts + " " + unit + " into dbW");
+                alert('Error occurred while trying to convert' + watts + "W");
             }
         });
     });

@@ -57,7 +57,8 @@
                 </div>
                 <div class="col-sm-4">
                   <select class="form-select-lg" name="jedinica">
-                    <option value="1000" selected>mW</option>
+                    <option value="1" selected>W</option>
+                    <option value="1000">mW</option>
                     <option value="1000000">uW</option>
                     <option value="1000000000">nW</option>
                     <option value="1000000000000">pW</option>
@@ -73,6 +74,14 @@
                   <input type="text" id="izracun" name="izracun" class="form-control" readonly>
                 </div>
               </div>
+              <div class="row mb-3 mt-3">
+                <div class="col-sm-2">
+                  <label for="dbm" class=" form-label font-weight-bold">P</label>
+                </div>
+                <div class="col-sm-8">
+                  <input type="text" id="dbm" name="dbm" class="form-control" readonly>
+                </div>
+              </div>
               <div>
                 <input type="submit" value="Pretvori" class="btn btn-primary" id="convert">
               </div>
@@ -86,6 +95,12 @@
     </div>
   </div>
 </div>
+</div>
+
+<div class="container d-flex justify-content-center mt-5">
+  <div class="alert alert-danger" role="alert">
+    This page is currently under development, some functionalities might not be working properly!!!
+  </div>
 </div>
 
 
