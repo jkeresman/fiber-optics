@@ -93,64 +93,108 @@
     <div class="container">
         <h2 class="text-uppercase mb-5">Proracun snage i vremena porasta za svjetlovodni link</h2>
         <h3 class="mb-4">Zadatak 38</h3>
-        <ul>
-            <li>
-                <div>
-                    <b>Pod</b> - snaga odasiljaca LED diode [dbW]
-                </div>
-                <div>
-                    <b>dLambda</b> - kvadratna srednja vrijednost sirine spektra izvora LED diode [nm/s]
-                </div>
-                <div>
-                    <b>lambda</b> - valna duljina [um] </b>
-                </div>
-            </li>
+        <div class="table-responsive">
+            <table class="table table-bordered table-hover">
+                <thead class="bg-primary text-white">
+                <tr>
+                    <th scope="col" class="text-uppercase">Oznaka</th>
+                    <th scope="col" class="text-uppercase">Opis</th>
+                    <th scope="col" class="text-uppercase">Mjerna jedinica</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td><b>Pod</b></td>
+                    <td>snaga odasiljaca LED diode</td>
+                    <td>dbW</td>
+                </tr>
 
-            <li>
-                <div>
-                    <b>L1</b> - komadi jednomodnog svjetlovoda [km]
-                </div>
-                <div>
-                    <b>D</b> - parametar materijalne disperzije [ps/ km * nm]
-                </div>
-                <div>
-                    <b>a</b> - gubici [db] na valnoj duljini lambda [um]
-                </div>
-            </li>
+                <tr>
+                    <td><b>dLambda</b></td>
+                    <td>kvadratna srednja vrijednost sirine spektra izvora LED diode</td>
+                    <td>nm/s</td>
+                </tr>
 
-            <li>
-                <b>ak</b> - gubici konetkora [db]
-            </li>
-            <li>
-                <b>as</b> - gubitak svakog fiksnog spoja[db]
-            </li>
-            <li>
-                <b>nb</b> - prosjecni broj fotona po bitu prijemnika PIN fotodiode
-            </li>
-            <li>
-                <b>Ms</b> - margina sustava [6 - 8]
-            </li>
-            <li>
-                <b>B</b> - brzina koju zelimo postici [Mb/s]
-            </li>
-        </ul>
+                <tr>
+                    <td><b>lambda</b></td>
+                    <td>valna duljina</td>
+                    <td>um</td>
+                </tr>
 
-        <h5>
-            Odrediti koliko bi bilo ogranicenje duljine prijenosa uslijed:
-        </h5>
-        <ol type="A">
-            <li>
-                samo gubitaka svjetlovoda ?
-            </li>
-            <li>
-                samo disperzije niti ?
-            </li>
-            <li>
-                svih parametara ovako sastavljenog sustava ?
-            </li>
-        </ol>
-        <h4>Formula</h4>
-        <IMG SRC="/img/formula.png" alt="formula" class="img-fluid mb-3 mt-3">
+                <tr>
+                    <td><b>L1</b></td>
+                    <td>komadi jednomodnog svjetlovoda</td>
+                    <td>km</td>
+                </tr>
+
+                <tr>
+                    <td><b>D</b></td>
+                    <td>parametar materijalne disperzije</td>
+                    <td>ps/ km * nm</td>
+                </tr>
+
+                <tr>
+                    <td><b>a</b></td>
+                    <td>gubici</td>
+                    <td>um</td>
+                </tr>
+
+                <tr>
+                    <td><b>ak</b></td>
+                    <td>gubici konetkora</td>
+                    <td>db/km</td>
+                </tr>
+
+                <tr>
+                    <td><b>as</b></td>
+                    <td>gubitak svakog fiksnog spoja</td>
+                    <td>db</td>
+                </tr>
+
+                <tr>
+                    <td><b>nb</b></td>
+                    <td>prosjecni broj fotona po bitu prijemnika PIN fotodiode</td>
+                    <td>int</td>
+                </tr>
+
+                <tr>
+                    <td><b>B</b></td>
+                    <td>brzina koju zelimo postici</td>
+                    <td>Mb/s</td>
+                </tr>
+
+                <tr>
+                    <td><b>Ms</b></td>
+                    <td>margina sustava]</td>
+                    <td>6 - 8</td>
+                </tr>
+
+                </tbody>
+            </table>
+        </div>
+
+        <div class="mb-3 mt-3">
+
+            <h5>
+                Odrediti koliko bi bilo ogranicenje duljine prijenosa uslijed:
+            </h5>
+            <ul class="mb-2 mt-2">
+                <li>
+                    samo gubitaka svjetlovoda <b>?</b>
+                </li>
+                <li>
+                    samo disperzije niti <b>?</b>
+                </li>
+                <li>
+                    svih parametara ovako sastavljenog sustava <b>?</b>
+                </li>
+            </ul>
+        </div>
+
+        <div>
+            <h4>Formula</h4>
+            <IMG SRC="/img/formula.png" alt="formula" class="img-fluid mb-3 mt-3">
+        </div>
     </div>
 
     <div class="row justify-content-center mt-3">
@@ -190,7 +234,7 @@
                 <div class="form-group row">
                     <label for="alpha" class="col-sm-2 col-form-label font-weight-bold">a</label>
                     <div class="col-sm-7">
-                        <input type="number" class="form-control " step="0.01" id="alpha" name="alpha" placeholder="dB" required value="0.25">
+                        <input type="number" class="form-control " step="0.01" id="alpha" name="alpha" placeholder="dB/km" required value="0.25">
                     </div>
                 </div>
 
