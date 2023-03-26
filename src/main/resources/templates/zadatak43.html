@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Zadatak 38</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <SCRIPT SRC="/js/zadatak43.js"></SCRIPT>
+    <SCRIPT SRC="/js/converter.js"></SCRIPT>
+</head>
+
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="/zadatak/38">Zadatak 38</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/zadatak/42">Zadatak 42</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="/zadatak/43">Zadatak 43</a>
+            </li>
+            <li class="nav-item ">
+                <a href="#" class="nav-link" data-toggle="modal" data-target="#exampleModal">W to dBW converter</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">W to dbW converter</h5>
+            </div>
+            <div class="modal-body">
+                <div class="container">
+                    <div class="row">
+                        <form id="converter">
+                            <div class="form-group row">
+                                <div class="col-sm-2">
+                                    <label for="vati" class="col-form-label font-weight-bold">P</label>
+                                </div>
+                                <div class="col-sm-6">
+                                    <input type="number" class="form-control" step="0.0001" id="vati" name="vati">
+                                </div>
+                                <div class="col-sm-4">
+                                    <select class="form-select-lg" name="jedinica">
+                                        <option value="1" selected>W</option>
+                                        <option value="1000" >mW</option>
+                                        <option value="1000000">uW</option>
+                                        <option value="1000000000">nW</option>
+                                        <option value="1000000000000">pW</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="row mb-3">
+                                <div class="col-sm-2">
+                                    <label for="izracun" class="form-label font-weight-bold">P</label>
+                                </div>
+                                <div class="col-sm-8">
+                                    <input type="text" id="izracun" name="izracun" class="form-control" readonly>
+                                </div>
+                            </div>
+
+                            <div class="row mb-3 mt-3">
+                                <div class="col-sm-2">
+                                    <label for="dbm" class=" form-label font-weight-bold">P</label>
+                                </div>
+                                <div class="col-sm-8">
+                                    <input type="text" id="dbm" name="dbm" class="form-control" readonly>
+                                </div>
+                            </div>
+                            <div>
+                                <input type="submit" value="Pretvori" class="btn btn-primary" id="convert">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer ">
+                <button type="button" class="btn btn-dark " data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+
+<div class="container mt-4 mb-4">
+    <div class="container">
+        <h2 class="text-uppercase mb-5">Proracun snage i vremena porasta za svjetlovodni link</h2>
+
+        <div>
+            <h5>EDFA(Erbium-Doped Fiber Amplifier) opticka pojacala</h5>
+            <div class="row">
+
+                <div class="col-lg-6">
+                    <IMG SRC="/img/edfa_01.png" alt="edfa" class="img-fluid mb-3 mt-3">
+                </div>
+
+                <div class="col-lg-6">
+                    <IMG SRC="/img/edfa_02.png" alt="edfa gain" class="img-fluid mb-3 mt-3">
+                </div>
+
+            </div>
+            <h6>Prednosti</h6>
+            <ul>
+                <li>dostupni u C bandu (1530-1565 nm) i L bandu (1560-1605 nm)</li>
+                <li>odlicna sprega,pojacalo gradeno od opticke niti dopirane Er</li>
+                <li>slaba ovisnost o temperaturi</li>
+                <li>veliko pojacanje (>30 dB)</li>
+                <li>konstantno pojacanje (<+-0,8 dB u C bandu i < +-0,5 dB u L bandu) </li>
+                <li>mogucnost pojacanja WDM sustava</li>
+            </ul>
+            <h6>Mane</h6>
+            <ul>
+                <li>neophodan izvor za lasersku pumpu</li>
+                <li>tesko se integriraju s ostalim komponentama</li>
+                <li>potrebni izjednacivaci (equilizers) dobitka za visestupanjska pojacanja</li>
+                <li>potrebna dinamicka kontrola pojacanja ako se treba ispustiti pojedini WDM kanal</li>
+            </ul>
+        </div>
+
+        <h3 class="mb-4 mt-2">Zadatak 38</h3>
+        <div class="table-responsive table-sm">
+            <table class="table table-bordered table-hover">
+                <thead class="bg-primary text-white">
+                <tr>
+                    <th scope="col" class="text-uppercase">Oznaka</th>
+                    <th scope="col" class="text-uppercase">Opis</th>
+                    <th scope="col" class="text-uppercase">Mjerna jedinica</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td><b>Pod</b></td>
+                    <td>snaga odasiljaca LED diode</td>
+                    <td>dbW</td>
+                </tr>
+
+                <tr>
+                    <td><b>dLambda</b></td>
+                    <td>kvadratna srednja vrijednost sirine spektra izvora LED diode</td>
+                    <td>nm/s</td>
+                </tr>
+
+                <tr>
+                    <td><b>lambda</b></td>
+                    <td>valna duljina</td>
+                    <td>um</td>
+                </tr>
+
+                <tr>
+                    <td><b>L1</b></td>
+                    <td>komadi jednomodnog svjetlovoda</td>
+                    <td>km</td>
+                </tr>
+
+                <tr>
+                    <td><b>D</b></td>
+                    <td>parametar materijalne disperzije</td>
+                    <td>ps/ km * nm</td>
+                </tr>
+
+                <tr>
+                    <td><b>a</b></td>
+                    <td>gubici</td>
+                    <td>db/km</td>
+                </tr>
+
+                <tr>
+                    <td><b>ak</b></td>
+                    <td>gubici konetkora</td>
+                    <td>db</td>
+                </tr>
+
+                <tr>
+                    <td><b>as</b></td>
+                    <td>gubitak svakog fiksnog spoja</td>
+                    <td>db</td>
+                </tr>
+
+                <tr>
+                    <td><b>nb</b></td>
+                    <td>prosjecni broj fotona po bitu prijemnika PIN fotodiode</td>
+                    <td>int</td>
+                </tr>
+
+                <tr>
+                    <td><b>B</b></td>
+                    <td>brzina koju zelimo postici</td>
+                    <td>Mb/s</td>
+                </tr>
+
+                <tr>
+                    <td><b>Ms</b></td>
+                    <td>margina sustava</td>
+                    <td>6dB do 8dB</td>
+                </tr>
+
+                </tbody>
+            </table>
+        </div>
+
+        <div class="mb-3 mt-3">
+
+            <h5>
+                Odrediti koliko bi trebalo biti pojacanje svakog
+                pojacala da bi ovaj sustav radio ?
+            </h5>
+        </div>
+
+        <div>
+            <h5 class="mt-2">Formule</h5>
+            <IMG SRC="/img/formula_43.png" alt="formula" class="img-fluid mb-3 mt-3">
+        </div>
+    </div>
+
+    <div class="row justify-content-center mt-3">
+        <div class="col-lg-6 col-md-6 ">
+            <form id="zadatak-43">
+
+                <div class="form-group row">
+                    <label for="Pod" class="col-sm-2 col-form-label font-weight-bold">Pod</label>
+                    <div class="col-sm-7">
+                        <input type="number" class="form-control"  step="0.0001" id="Pod" name="Pod" placeholder="dbW"
+                               value="-40" required>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label for="b" class="col-sm-2 col-form-label font-weight-bold">B</label>
+                    <div class="col-sm-7">
+                        <input type="number" class="form-control " step="0.0001" id="b" name="b" placeholder="Gb/s"
+                               value="40" required>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label for="l" class="col-sm-2 col-form-label font-weight-bold">L</label>
+                    <div class="col-sm-7">
+                        <input type="number" class="form-control " step="0.0001" id="l" name="l"
+                               placeholder="km" value="523" required>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label for="lambda" class="col-sm-2 col-form-label font-weight-bold">lambda</label>
+                    <div class="col-sm-7">
+                        <input type="number" class="form-control " step="0.0001" id="lambda" name="lambda"
+                               placeholder="nm" required value="1550">
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label for="alpha" class="col-sm-2 col-form-label font-weight-bold">a</label>
+                    <div class="col-sm-7">
+                        <input type="number" class="form-control " step="0.0001" id="alpha" name="alpha"
+                               placeholder="dB/km" required value="0.22">
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label for="alpha-s" class="col-sm-2 col-form-label font-weight-bold">as</label>
+                    <div class="col-sm-7">
+                        <input type="number" class="form-control " step="0.0001" id="alpha-s" name="alpha-s"
+                               placeholder="dB" required value="0.1">
+                    </div>
+                </div>
+
+
+                <div class="form-group row">
+                    <label for="alpha-k" class="col-sm-2 col-form-label font-weight-bold">ak</label>
+                    <div class="col-sm-7">
+                        <input type="number" class="form-control" step="0.0001" id="alpha-k" name="alpha-k"
+                               placeholder="dB" required value="0.5">
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label for="nb" class="col-sm-2 col-form-label font-weight-bold">nb</label>
+                    <div class="col-sm-7">
+                        <input type="number" class="form-control"  id="nb" name="nb" required value="850">
+                    </div>
+                </div>
+
+
+                <div class="form-group row">
+                    <label for="ls" class="col-sm-2 col-form-label font-weight-bold">Ls</label>
+                    <div class="col-sm-7">
+                        <input type="number" class="form-control " step="0.0001" id="ls" name="ls" placeholder="km"
+                               required value="3">
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label for="la" class="col-sm-2 col-form-label font-weight-bold">La</label>
+                    <div class="col-sm-7">
+                        <input type="number" class="form-control " step="0.0001" id="la" name="la" placeholder="km"
+                               required value="80">
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label for="ms" class="col-sm-2 col-form-label font-weight-bold">Ms</label>
+                    <div class="col-sm-7">
+                        <input type="number" class="form-control " id="ms" step="0.0001" name="ms" value="6"
+                               placeholder="dB" required>
+                    </div>
+                </div>
+                <div class="mt-5">
+                    <input type="submit" value="Izracunaj" class="btn btn-primary" id="izracunaj-43" >
+                </div>
+            </form>
+        </div>
+        <div class="col-lg-4 col-md-4 text-center">
+            <br><br>
+            <label for="rez-ga" class="form-label text-uppercase">Ga</label>
+            <input type="text" id="rez-ga" name="rez-ga" class="form-control text-center" readonly>
+            <br><br>
+            <label for="rez-na" class="form-label text-uppercase">Na</label>
+            <input type="text" id="rez-na" name="rez-na" class="form-control text-center" readonly>
+            <br><br>
+            <label for="rez-ns" class="form-label text-uppercase">Ns </label>
+            <input type="text" id="rez-ns" name="rez-ns" class="form-control text-center" readonly>
+            <br><br>
+            <label for="rez-ppr" class="form-label text-uppercase">Ppr</label>
+            <input type="text" id="rez-ppr" name="rez-ppr" class="form-control text-center" readonly>
+            <br><br>
+        </div>
+    </div>
+</div>
+</html>
