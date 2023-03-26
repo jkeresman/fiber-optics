@@ -40,8 +40,8 @@ public class Zadatak43Service {
         Integer brojFotonaPoBitu = zadatak43.getBrojFotonaPoBitu();
         Double brzinaPrijenosa = zadatak43.getBrzinaPrijenosa();
         Double lambda = zadatak43.getLambda();
-        Double snagaUVatima = brojFotonaPoBitu * ((PLANCK_CONSTANT * SPEED_OF_LIGHT)
-                / (lambda * NANO) * brzinaPrijenosa * GIGA_BITA_PO_SEKUNDI);
+        Double snagaUVatima = brojFotonaPoBitu * ((PLANCK_CONSTANT.getValue() * SPEED_OF_LIGHT.getValue())
+                / (lambda * NANO.getValue()) * brzinaPrijenosa * GIGA_BITA_PO_SEKUNDI.getValue());
         return converterService.convertWToDbm(snagaUVatima);
     }
 

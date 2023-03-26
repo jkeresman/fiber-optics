@@ -28,8 +28,8 @@ public class Zadatak38Service {
             Double disperzijaNiti = zadatak38.getMaterijalnaDisperzija();
             Double dLambda = zadatak38.getDeltaLambda();
             Double brzinaPrijenosa = zadatak38.getBrzinaPrijenosa();
-            Double rjesenjeB = 1/(4 * Math.abs(disperzijaNiti * PIKO)
-                    * dLambda * brzinaPrijenosa * MEGA_BITA_PO_SEKUNDI);
+            Double rjesenjeB = 1/(4 * Math.abs(disperzijaNiti * PIKO.getValue())
+                    * dLambda * brzinaPrijenosa * MEGA_BITA_PO_SEKUNDI.getValue());
             return new BigDecimal(rjesenjeB);
         }
 
@@ -37,8 +37,8 @@ public class Zadatak38Service {
             Double brojFotonaPoBitu = zadatak38.getBrojFotonaPoBitu();
             Double lambda = zadatak38.getLambda();
             Double brzinaKojuZelimoPostici = zadatak38.getBrzinaPrijenosa();
-            Double snagaUW = brojFotonaPoBitu * ((PLANCK_CONSTANT * SPEED_OF_LIGHT)
-                    / (lambda * MIKRO) * brzinaKojuZelimoPostici * MEGA_BITA_PO_SEKUNDI);
+            Double snagaUW = brojFotonaPoBitu * ((PLANCK_CONSTANT.getValue() * SPEED_OF_LIGHT.getValue())
+                    / (lambda * MIKRO.getValue()) * brzinaKojuZelimoPostici * MEGA_BITA_PO_SEKUNDI.getValue());
             return converterService.convertToDbW(snagaUW);
         }
 
