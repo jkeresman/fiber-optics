@@ -18,7 +18,7 @@ public class Zadatak42Controller {
     private final StaticResourcesService staticResourcesService;
     private final Zadatak42Service zadatak42Service;
 
-    @PostMapping
+    @PostMapping(path ="/calculate")
     public ResponseEntity<BigDecimal> izracunajZadatak42(@RequestBody Zadatak42Request zadatak42) {
         BigDecimal response = zadatak42Service.solve(zadatak42);
         return new ResponseEntity<>(response, HttpStatus.OK);

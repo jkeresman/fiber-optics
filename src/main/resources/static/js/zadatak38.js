@@ -21,7 +21,6 @@ $(document).ready(function () {
             contentType: "application/json",
             dataType: "json",
             success: function (response) {
-                console.log(response)
                 $("#rez-od").val(response.snagaPrijemnikadbW.toFixed(4) + " dbW");
                 $("#rez-a").val(response.rjesenjeA.toFixed(4) + " km");
                 $("#rez-b").val(response.rjesenjeB.toFixed(4) + " km");
